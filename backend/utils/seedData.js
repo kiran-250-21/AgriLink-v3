@@ -1,5 +1,6 @@
 require('dotenv').config({ path: __dirname + '/../.env' });
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const Vehicle = require('../models/Vehicle');
 const Harvest = require('../models/Harvest');
@@ -14,12 +15,18 @@ const AuditLog = require('../models/AuditLog');
 const seedCoreData = async () => {
   try {
     const adminEmail = 'admin@agrilink.com';
-    const adminPassword = 'adminPass123!';
+    const rawAdminPassword = 'adminPass123!';
 
-    // Explicitly update/synchronize Admin user password to adminPass123!
+    // Pre-hash admin password explicitly with bcrypt
+    const salt = await bcrypt.genSalt(10);
+    const hashedAdminPassword = await bcrypt.hash(rawAdminPassword, salt);
+
+    // Synchronize Admin user explicitly in MongoDB
     let adminUser = await User.findOne({ email: adminEmail });
     if (adminUser) {
-      adminUser.passwordHash = adminPassword;
+      adminUser.passwordHash = hashedAdminPassword;
+      adminUser.status = 'ACTIVE';
+      adminUser.verificationStatus = 'VERIFIED';
       await adminUser.save();
       console.log(`[Seed Engine] Admin password synchronized to adminPass123! for ${adminEmail}`);
     } else {
@@ -27,11 +34,12 @@ const seedCoreData = async () => {
         name: 'System Admin',
         email: adminEmail,
         phone: '9900000000',
-        passwordHash: adminPassword,
+        passwordHash: hashedAdminPassword,
         role: 'ADMIN',
         status: 'ACTIVE',
         verificationStatus: 'VERIFIED',
       });
+      console.log(`[Seed Engine] Admin account created for ${adminEmail}`);
     }
 
     const totalUsers = await User.countDocuments();
