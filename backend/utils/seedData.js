@@ -21,14 +21,18 @@ const seedCoreData = async () => {
     const salt = await bcrypt.genSalt(10);
     const hashedAdminPassword = await bcrypt.hash(rawAdminPassword, salt);
 
-    // Synchronize Admin user explicitly in MongoDB
-    let adminUser = await User.findOne({ email: adminEmail });
+    // Synchronize Admin user explicitly by role OR email
+    let adminUser = await User.findOne({ $or: [{ role: 'ADMIN' }, { email: adminEmail }] });
     if (adminUser) {
+      adminUser.name = 'System Admin';
+      adminUser.email = adminEmail;
+      adminUser.phone = '9900000000';
       adminUser.passwordHash = hashedAdminPassword;
+      adminUser.role = 'ADMIN';
       adminUser.status = 'ACTIVE';
       adminUser.verificationStatus = 'VERIFIED';
       await adminUser.save();
-      console.log(`[Seed Engine] Admin password synchronized to adminPass123! for ${adminEmail}`);
+      console.log(`[Seed Engine] Admin account synchronized: ${adminEmail} / ${rawAdminPassword}`);
     } else {
       adminUser = await User.create({
         name: 'System Admin',
@@ -39,12 +43,12 @@ const seedCoreData = async () => {
         status: 'ACTIVE',
         verificationStatus: 'VERIFIED',
       });
-      console.log(`[Seed Engine] Admin account created for ${adminEmail}`);
+      console.log(`[Seed Engine] Admin account created: ${adminEmail} / ${rawAdminPassword}`);
     }
 
     const totalUsers = await User.countDocuments();
     if (totalUsers > 1) {
-      console.log('[Seed Engine] Database already populated with records.');
+      console.log('[Seed Engine] Database records present. Synchronization complete.');
       return;
     }
 
