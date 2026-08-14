@@ -13,34 +13,34 @@ const AuditLog = require('../models/AuditLog');
 
 const seedCoreData = async () => {
   try {
-    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@agrilink.com').toLowerCase();
-    const adminPassword = process.env.ADMIN_PASSWORD || 'adminPass123!';
+    const adminEmail = 'admin@agrilink.com';
+    const adminPassword = 'adminPass123!';
 
-    // Ensure Admin account password is always set to adminPassword
+    // Explicitly update/synchronize Admin user password to adminPass123!
     let adminUser = await User.findOne({ email: adminEmail });
     if (adminUser) {
       adminUser.passwordHash = adminPassword;
       await adminUser.save();
-      console.log(`[Seed Engine] Admin password synchronized for ${adminEmail}`);
+      console.log(`[Seed Engine] Admin password synchronized to adminPass123! for ${adminEmail}`);
+    } else {
+      adminUser = await User.create({
+        name: 'System Admin',
+        email: adminEmail,
+        phone: '9900000000',
+        passwordHash: adminPassword,
+        role: 'ADMIN',
+        status: 'ACTIVE',
+        verificationStatus: 'VERIFIED',
+      });
     }
 
     const totalUsers = await User.countDocuments();
-    if (totalUsers > 0) {
+    if (totalUsers > 1) {
       console.log('[Seed Engine] Database already populated with records.');
       return;
     }
 
     console.log('[Seed Engine] Seeding initial SDE platform database records...');
-
-    const admin = await User.create({
-      name: 'System Admin',
-      email: adminEmail,
-      phone: '9900000000',
-      passwordHash: adminPassword,
-      role: 'ADMIN',
-      status: 'ACTIVE',
-      verificationStatus: 'VERIFIED',
-    });
 
     const farmer1 = await User.create({
       name: 'Kiran Farmer',
@@ -183,16 +183,16 @@ const seedCoreData = async () => {
 
     console.log('[Seed Engine] Seeding Live Market Prices...');
     await MarketPrice.create([
-      { marketId: marketGuntur._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 50, updatedBy: admin._id },
-      { marketId: marketGuntur._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 180, updatedBy: admin._id },
-      { marketId: marketGuntur._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 120, updatedBy: admin._id },
-      { marketId: marketVijayawada._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 51, updatedBy: admin._id },
-      { marketId: marketVijayawada._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 185, updatedBy: admin._id },
-      { marketId: marketVijayawada._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 122, updatedBy: admin._id },
-      { marketId: marketTenali._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 48, updatedBy: admin._id },
-      { marketId: marketTenali._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 118, updatedBy: admin._id },
-      { marketId: marketKurnool._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 55, updatedBy: admin._id },
-      { marketId: marketKurnool._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 190, updatedBy: admin._id },
+      { marketId: marketGuntur._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 50, updatedBy: adminUser._id },
+      { marketId: marketGuntur._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 180, updatedBy: adminUser._id },
+      { marketId: marketGuntur._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 120, updatedBy: adminUser._id },
+      { marketId: marketVijayawada._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 51, updatedBy: adminUser._id },
+      { marketId: marketVijayawada._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 185, updatedBy: adminUser._id },
+      { marketId: marketVijayawada._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 122, updatedBy: adminUser._id },
+      { marketId: marketTenali._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 48, updatedBy: adminUser._id },
+      { marketId: marketTenali._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 118, updatedBy: adminUser._id },
+      { marketId: marketKurnool._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 55, updatedBy: adminUser._id },
+      { marketId: marketKurnool._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 190, updatedBy: adminUser._id },
     ]);
 
     console.log('[Seed Engine] Creating Buyer Requirement Offers...');
@@ -265,7 +265,7 @@ const seedCoreData = async () => {
 
     console.log('[Seed Engine] Seeding Audit Log entry...');
     await AuditLog.create({
-      userId: admin._id,
+      userId: adminUser._id,
       userRole: 'ADMIN',
       action: 'DATABASE_SEEDED',
       details: 'Populated initial SDE startup database records cleanly.',
@@ -273,7 +273,7 @@ const seedCoreData = async () => {
 
     console.log('---------------------------------------------------------');
     console.log('✅ AgriLink Database Seeded Successfully!');
-    console.log(`Admin User:   ${adminEmail}  /  ${adminPassword}`);
+    console.log(`Admin User:   admin@agrilink.com  /  adminPass123!`);
     console.log('Farmer User:  kiran@farmer.com  /  farmer123');
     console.log('Buyer User:   ravi@buyer.com   /  buyer123');
     console.log('Driver User:  arun@driver.com  /  driver123');
