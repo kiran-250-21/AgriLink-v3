@@ -21,20 +21,26 @@ const seedCoreData = async () => {
     const salt = await bcrypt.genSalt(10);
     const hashedAdminPassword = await bcrypt.hash(rawAdminPassword, salt);
 
-    // Synchronize Admin user explicitly by role OR email
-    let adminUser = await User.findOne({ $or: [{ role: 'ADMIN' }, { email: adminEmail }] });
-    if (adminUser) {
-      adminUser.name = 'System Admin';
-      adminUser.email = adminEmail;
-      adminUser.phone = '9900000000';
-      adminUser.passwordHash = hashedAdminPassword;
-      adminUser.role = 'ADMIN';
-      adminUser.status = 'ACTIVE';
-      adminUser.verificationStatus = 'VERIFIED';
-      await adminUser.save();
-      console.log(`[Seed Engine] Admin account synchronized: ${adminEmail} / ${rawAdminPassword}`);
+    // Direct atomic MongoDB update to guarantee Admin password is adminPass123!
+    const existingAdmin = await User.findOne({ $or: [{ role: 'ADMIN' }, { email: adminEmail }] });
+    if (existingAdmin) {
+      await User.updateOne(
+        { _id: existingAdmin._id },
+        {
+          $set: {
+            name: 'System Admin',
+            email: adminEmail,
+            phone: '9900000000',
+            passwordHash: hashedAdminPassword,
+            role: 'ADMIN',
+            status: 'ACTIVE',
+            verificationStatus: 'VERIFIED',
+          },
+        }
+      );
+      console.log(`[Seed Engine] Direct atomic update for ${adminEmail} completed successfully.`);
     } else {
-      adminUser = await User.create({
+      await User.create({
         name: 'System Admin',
         email: adminEmail,
         phone: '9900000000',
@@ -195,16 +201,16 @@ const seedCoreData = async () => {
 
     console.log('[Seed Engine] Seeding Live Market Prices...');
     await MarketPrice.create([
-      { marketId: marketGuntur._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 50, updatedBy: adminUser._id },
-      { marketId: marketGuntur._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 180, updatedBy: adminUser._id },
-      { marketId: marketGuntur._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 120, updatedBy: adminUser._id },
-      { marketId: marketVijayawada._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 51, updatedBy: adminUser._id },
-      { marketId: marketVijayawada._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 185, updatedBy: adminUser._id },
-      { marketId: marketVijayawada._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 122, updatedBy: adminUser._id },
-      { marketId: marketTenali._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 48, updatedBy: adminUser._id },
-      { marketId: marketTenali._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 118, updatedBy: adminUser._id },
-      { marketId: marketKurnool._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 55, updatedBy: adminUser._id },
-      { marketId: marketKurnool._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 190, updatedBy: adminUser._id },
+      { marketId: marketGuntur._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 50, updatedBy: existingAdmin._id },
+      { marketId: marketGuntur._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 180, updatedBy: existingAdmin._id },
+      { marketId: marketGuntur._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 120, updatedBy: existingAdmin._id },
+      { marketId: marketVijayawada._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 51, updatedBy: existingAdmin._id },
+      { marketId: marketVijayawada._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 185, updatedBy: existingAdmin._id },
+      { marketId: marketVijayawada._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 122, updatedBy: existingAdmin._id },
+      { marketId: marketTenali._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 48, updatedBy: existingAdmin._id },
+      { marketId: marketTenali._id, crop: 'Turmeric', quality: 'GRADE_A', pricePerUnit: 118, updatedBy: existingAdmin._id },
+      { marketId: marketKurnool._id, crop: 'Ginger', quality: 'GRADE_A', pricePerUnit: 55, updatedBy: existingAdmin._id },
+      { marketId: marketKurnool._id, crop: 'Chilli', quality: 'GRADE_A', pricePerUnit: 190, updatedBy: existingAdmin._id },
     ]);
 
     console.log('[Seed Engine] Creating Buyer Requirement Offers...');
@@ -277,7 +283,7 @@ const seedCoreData = async () => {
 
     console.log('[Seed Engine] Seeding Audit Log entry...');
     await AuditLog.create({
-      userId: adminUser._id,
+      userId: existingAdmin._id,
       userRole: 'ADMIN',
       action: 'DATABASE_SEEDED',
       details: 'Populated initial SDE startup database records cleanly.',
