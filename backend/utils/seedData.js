@@ -13,15 +13,24 @@ const AuditLog = require('../models/AuditLog');
 
 const seedCoreData = async () => {
   try {
-    const adminCount = await User.countDocuments();
-    if (adminCount > 0) {
+    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@agrilink.com').toLowerCase();
+    const adminPassword = process.env.ADMIN_PASSWORD || 'adminPass123!';
+
+    // Ensure Admin account password is always set to adminPassword
+    let adminUser = await User.findOne({ email: adminEmail });
+    if (adminUser) {
+      adminUser.passwordHash = adminPassword;
+      await adminUser.save();
+      console.log(`[Seed Engine] Admin password synchronized for ${adminEmail}`);
+    }
+
+    const totalUsers = await User.countDocuments();
+    if (totalUsers > 0) {
       console.log('[Seed Engine] Database already populated with records.');
       return;
     }
 
     console.log('[Seed Engine] Seeding initial SDE platform database records...');
-    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@agrilink.com').toLowerCase();
-    const adminPassword = process.env.ADMIN_PASSWORD || 'adminPass123!';
 
     const admin = await User.create({
       name: 'System Admin',
