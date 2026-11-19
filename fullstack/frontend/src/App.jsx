@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import MobileBottomNav from './components/MobileBottomNav';
 import ProtectedRoute from './components/ProtectedRoute';
 
 // Auth Pages
@@ -39,15 +40,45 @@ import OrderManagement from './pages/admin/OrderManagement';
 import Analytics from './pages/admin/Analytics';
 import AuditLogs from './pages/admin/AuditLogs';
 
-// Layout wrapper for authenticated workspaces
+// Layout wrapper for authenticated workspaces with responsive mobile drawer & bottom navigation
 function MainLayout({ children }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-      <Navbar />
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6 max-w-7xl mx-auto w-full">{children}</main>
+      <Navbar
+        onToggleMobileMenu={() => setMobileMenuOpen((prev) => !prev)}
+        isMobileMenuOpen={mobileMenuOpen}
+      />
+      <div className="flex flex-1 relative overflow-x-hidden">
+        {/* Desktop Sidebar (hidden on mobile, visible on lg and up) */}
+        <div className="hidden lg:block w-64 shrink-0">
+          <Sidebar />
+        </div>
+
+        {/* Mobile / Tablet Drawer Sidebar (slide-out overlay) */}
+        {mobileMenuOpen && (
+          <div className="fixed inset-0 z-50 lg:hidden flex">
+            {/* Dark Backdrop */}
+            <div
+              className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            {/* Slide-out Drawer */}
+            <div className="relative w-72 max-w-[85vw] h-full bg-slate-900 border-r border-slate-800 shadow-2xl flex flex-col z-10 animate-in slide-in-from-left duration-200">
+              <Sidebar onCloseMobile={() => setMobileMenuOpen(false)} isMobile={true} />
+            </div>
+          </div>
+        )}
+
+        {/* Main Content Area */}
+        <main className="flex-1 p-3.5 sm:p-5 md:p-6 lg:p-8 max-w-7xl mx-auto w-full pb-24 lg:pb-8 overflow-y-auto">
+          {children}
+        </main>
       </div>
+
+      {/* Mobile Bottom Navigation Bar (1-thumb fast switching for phones) */}
+      <MobileBottomNav />
     </div>
   );
 }

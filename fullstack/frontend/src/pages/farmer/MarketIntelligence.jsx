@@ -108,27 +108,27 @@ export default function MarketIntelligence() {
   return (
     <div className="space-y-8">
       {/* Header Banner */}
-      <div className="glass-panel p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="glass-panel p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30">
-              <TrendingUp className="w-6 h-6" />
+            <span className="p-1.5 sm:p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
             </span>
-            <h1 className="text-2xl font-bold font-heading text-white">Market Intelligence & Net Return Calculator</h1>
+            <h1 className="text-xl sm:text-2xl font-bold font-heading text-white">Market Intelligence & Net Return</h1>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-[11px] sm:text-xs text-slate-400 mt-1">
             Compares live APMC market prices and buyer offers against distance-based transportation costs to calculate real net revenue.
           </p>
         </div>
 
         {/* Harvest Selector Bar */}
-        <div className="flex items-center gap-3 w-full md:w-auto">
-          <div>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full md:w-auto">
+          <div className="flex-1 sm:flex-initial">
             <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Select Harvest</label>
             <select
               value={selectedHarvestId}
               onChange={handleHarvestSelectChange}
-              className="px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs font-semibold focus:ring-2 focus:ring-amber-500"
+              className="w-full sm:w-auto px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs font-semibold focus:ring-2 focus:ring-amber-500"
             >
               {harvests.map((h) => (
                 <option key={h._id} value={h._id}>
@@ -138,7 +138,7 @@ export default function MarketIntelligence() {
             </select>
           </div>
 
-          <div>
+          <div className="w-full sm:w-28">
             <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Quantity (Kg)</label>
             <input
               type="number"
@@ -147,7 +147,7 @@ export default function MarketIntelligence() {
                 setQuantity(e.target.value);
                 runAnalysis(selectedHarvestId, e.target.value);
               }}
-              className="w-24 px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs font-semibold"
+              className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-xl text-white text-xs font-semibold"
             />
           </div>
         </div>
@@ -161,19 +161,19 @@ export default function MarketIntelligence() {
       ) : analysisResult ? (
         <div className="space-y-6">
           {/* Analysis Context Banner */}
-          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-xs text-slate-300">
-            <div>
+          <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900/60 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-slate-300">
+            <div className="leading-relaxed">
               Analyzing: <strong className="text-white">{analysisResult.harvest?.cropName}</strong> • Quantity:{' '}
               <strong className="text-emerald-400">{analysisResult.quantityAnalyzed} Kg</strong> • Origin:{' '}
               <strong className="text-slate-200">{analysisResult.harvest?.farmLocation}</strong>
               {analysisResult.harvest?.latitude != null && analysisResult.harvest?.longitude != null && (
-                <span className="ml-2 px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono">
+                <span className="ml-2 px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono inline-block">
                   📍 GPS Calibrated
                 </span>
               )}
             </div>
             <div className="text-slate-400">
-              Total Options Analyzed: <strong className="text-amber-400">{analysisResult.allOptions?.length}</strong>
+              Total Options: <strong className="text-amber-400">{analysisResult.allOptions?.length}</strong>
             </div>
           </div>
 

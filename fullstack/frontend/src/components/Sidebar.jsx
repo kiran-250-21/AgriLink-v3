@@ -15,9 +15,10 @@ import {
   ShieldAlert,
   Tag,
   ListCheck,
+  X,
 } from 'lucide-react';
 
-export default function Sidebar() {
+export default function Sidebar({ onCloseMobile, isMobile = false }) {
   const { user } = useAuth();
   if (!user) return null;
 
@@ -57,8 +58,28 @@ export default function Sidebar() {
   const navItems = roleMenus[user.role] || [];
 
   return (
-    <aside className="w-64 glass-panel border-r border-slate-800 bg-slate-900/60 p-4 min-h-[calc(100vh-4rem)] flex flex-col justify-between">
+    <aside
+      className={`glass-panel border-r border-slate-800 bg-slate-900/90 p-4 flex flex-col justify-between ${
+        isMobile ? 'h-full w-full' : 'w-64 min-h-[calc(100vh-4rem)]'
+      }`}
+    >
       <div className="space-y-1">
+        {/* Mobile Header with Close button */}
+        {isMobile && (
+          <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-800">
+            <span className="text-xs uppercase font-extrabold tracking-wider text-emerald-400">
+              Menu Navigation
+            </span>
+            <button
+              type="button"
+              onClick={onCloseMobile}
+              className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        )}
+
         <p className="px-3 text-[10px] uppercase font-bold tracking-wider text-slate-400 mb-2">
           {user.role} Navigation
         </p>
@@ -69,6 +90,9 @@ export default function Sidebar() {
             <NavLink
               key={item.path}
               to={item.path}
+              onClick={() => {
+                if (isMobile && onCloseMobile) onCloseMobile();
+              }}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all ${
                   isActive
