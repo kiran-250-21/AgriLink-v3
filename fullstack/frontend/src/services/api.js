@@ -1,8 +1,13 @@
 import axios from 'axios';
 
 // Format API Base URL cleanly for local development and Render deployment
-let rawUrl = import.meta.env.VITE_API_URL || '/api';
+let rawUrl = import.meta.env.VITE_API_URL || 'https://agrilink-backend-qjfz.onrender.com/api';
 let API_BASE_URL = rawUrl.trim();
+
+// If Render injected only internal service hostname (e.g. 'agrilink-backend-qjfz' or 'agrilink-backend')
+if (!API_BASE_URL.includes('.') && !API_BASE_URL.startsWith('/') && !API_BASE_URL.includes('localhost')) {
+  API_BASE_URL = `${API_BASE_URL}.onrender.com`;
+}
 
 if (API_BASE_URL && !API_BASE_URL.startsWith('http') && !API_BASE_URL.startsWith('/')) {
   API_BASE_URL = `https://${API_BASE_URL}`;

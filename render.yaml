@@ -34,7 +34,4 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: agrilink-backend
-          property: host
+        value: https://agrilink-backend-qjfz.onrender.com/api
