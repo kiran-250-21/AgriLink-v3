@@ -1,0 +1,26 @@
+quote_id,hub,vehicle,capacity_kg,distance_km,rate_inr,effective_inr_per_tonne_km,type
+FQ01,Kurnool,Tata Ace (1.5T),1500,25,800,21.33,Short haul village-to-mandi
+FQ02,Kurnool,Tata Ace (1.5T),1500,45,1200,17.78,Taluk transit
+FQ03,Kurnool,Mahindra Bolero (2.5T),2500,50,1600,12.8,Sub-district haul
+FQ04,Kurnool,Mahindra Bolero (2.5T),2500,85,2300,10.82,Inter-taluk transfer
+FQ05,Kurnool,Eicher 14ft (4.0T),4000,120,4400,9.17,Inter-district highway
+FQ06,Kurnool,Eicher 14ft (4.0T),4000,160,5600,8.75,Inter-district highway
+FQ07,Kurnool,Tata Ace (1.5T),1500,30,900,20.0,Short haul
+FQ08,Kurnool,Mahindra Bolero (2.5T),2500,70,2000,11.43,Intermediate transit
+FQ09,Kadapa,Tata Ace (1.5T),1500,20,750,25.0,Local farm-to-yard
+FQ10,Kadapa,Tata Ace (1.5T),1500,40,1100,18.33,Taluk route
+FQ11,Kadapa,Mahindra Bolero (2.5T),2500,60,1800,12.0,Sub-district haul
+FQ12,Kadapa,Mahindra Bolero (2.5T),2500,95,2500,10.53,Inter-district transfer
+FQ13,Kadapa,Eicher 14ft (4.0T),4000,130,4800,9.23,Inter-district highway
+FQ14,Kadapa,Eicher 17ft (5.0T),5000,175,6800,7.77,Long-distance bulk haul
+FQ15,Kadapa,Tata Ace (1.5T),1500,35,1050,20.0,Short haul
+FQ16,Kadapa,Mahindra Bolero (2.5T),2500,75,2100,11.2,Intermediate transit
+FQ17,Guntur,Tata Ace (1.5T),1500,22,800,24.24,Local cotton farm haul
+FQ18,Guntur,Tata Ace (1.5T),1500,42,1200,19.05,Taluk cotton transit
+FQ19,Guntur,Mahindra Bolero (2.5T),2500,55,1750,12.73,Sub-district haul
+FQ20,Guntur,Mahindra Bolero (2.5T),2500,90,2400,10.67,Inter-district transfer
+FQ21,Guntur,Eicher 14ft (4.0T),4000,115,4300,9.35,Inter-district highway
+FQ22,Guntur,Eicher 17ft (5.0T),5000,150,5800,7.73,Long-distance bulk haul
+FQ23,Guntur,Tata Ace (1.5T),1500,28,950,22.62,Short haul
+FQ24,Guntur,Mahindra Bolero (2.5T),2500,80,2200,11.0,Intermediate transit
+FQ25,Guntur,Eicher 14ft (4.0T),4000,140,5100,9.11,Inter-district highway

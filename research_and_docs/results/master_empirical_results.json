@@ -1,0 +1,2090 @@
+{
+  "metadata": {
+    "title": "AgriLink V3 Comprehensive Publication-Grade Empirical Results",
+    "timestamp": "2026-10-23T14:21:41.986747",
+    "data_audit": {
+      "raw_records": 1118899,
+      "andhra_pradesh_records": 5409,
+      "target_crop_records": 2865,
+      "total_market_days": 2324,
+      "valid_commodity_market_pairs": 27,
+      "retained_market_days": 2291,
+      "unique_markets": 18,
+      "date_min": "2024-08-16",
+      "date_max": "2025-08-14"
+    },
+    "scenarios_evaluated_primary": 1000,
+    "common_cohort_evaluated": 624
+  },
+  "full_cohort_summary": {
+    "cohort_size": 1000,
+    "strategies": {
+      "S1_Nearest": {
+        "mean_nr": 144997.0594125794,
+        "median_nr": 116557.3037995334,
+        "std_nr": 90974.23596107576,
+        "mean_rev": 145743.910340873,
+        "mean_tc": 746.8509282936385,
+        "mean_dist": 24.211163095490573
+      },
+      "S2_HighestPrice": {
+        "mean_nr": 157198.7616947099,
+        "median_nr": 130000.50778311538,
+        "std_nr": 92982.04567141322,
+        "mean_rev": 163351.28668690476,
+        "mean_tc": 6152.524992194876,
+        "mean_dist": 201.59817816676363
+      },
+      "S3_DistanceCap": {
+        "mean_nr": 144997.0594125794,
+        "median_nr": 116557.3037995334,
+        "std_nr": 90974.23596107576,
+        "mean_rev": 145743.910340873,
+        "mean_tc": 746.8509282936385,
+        "mean_dist": 24.211163095490573
+      },
+      "S4_Hurdle": {
+        "mean_nr": 158142.97280731733,
+        "median_nr": 130180.36662678889,
+        "std_nr": 93174.51801585383,
+        "mean_rev": 162938.97481785715,
+        "mean_tc": 4796.002010539798,
+        "mean_dist": 156.61320422809126
+      },
+      "S5_LongRunAvg": {
+        "mean_nr": 158109.4836906893,
+        "median_nr": 129871.35021214756,
+        "std_nr": 93183.51016800945,
+        "mean_rev": 161645.22248015876,
+        "mean_tc": 3535.7387894694443,
+        "mean_dist": 113.39226126914242
+      },
+      "S6_MovingAvg": {
+        "mean_nr": 158561.52141856516,
+        "median_nr": 130529.60579426565,
+        "std_nr": 93015.13069235964,
+        "mean_rev": 162032.79515753966,
+        "mean_tc": 3471.273738974535,
+        "mean_dist": 113.60205585470437
+      },
+      "S7_RobustWorstCase": {
+        "mean_nr": 155344.50663129694,
+        "median_nr": 129957.9040666688,
+        "std_nr": 91431.90399852407,
+        "mean_rev": 158655.94680039684,
+        "mean_tc": 3311.4401690998907,
+        "mean_dist": 107.13542607416368
+      },
+      "S8_Top3Portfolio": {
+        "mean_nr": 153978.11979455443,
+        "median_nr": 128752.79351495052,
+        "std_nr": 93942.53405875583,
+        "mean_rev": 155994.8571063492,
+        "mean_tc": 2016.7373117947882,
+        "mean_dist": 65.90346619020987
+      },
+      "AgriLink": {
+        "mean_nr": 158753.4306770533,
+        "median_nr": 130529.60579426565,
+        "std_nr": 92893.31442411702,
+        "mean_rev": 162114.4435968254,
+        "mean_tc": 3361.0129197721085,
+        "mean_dist": 109.27031529319378
+      },
+      "Oracle": {
+        "mean_nr": 159369.6065679215,
+        "median_nr": 130653.6568714581,
+        "std_nr": 92618.17245295875,
+        "mean_rev": 163047.8426170635,
+        "mean_tc": 3678.2360491420236,
+        "mean_dist": 120.10748785930818
+      },
+      "Oracle_Nearest": {
+        "mean_nr": 144997.0594125794,
+        "median_nr": 116557.3037995334,
+        "std_nr": 90974.23596107576,
+        "mean_rev": 145743.910340873,
+        "mean_tc": 746.8509282936385,
+        "mean_dist": 24.211163095490573
+      }
+    },
+    "comparisons": {
+      "AgriLink_vs_S1_Nearest": {
+        "mean_gain_inr": 13756.371264473912,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 9.48734499872239,
+        "pct_gain_mean_scenario": 17.46720631547488,
+        "wins": 492,
+        "ties": 471,
+        "losses": 37,
+        "win_rate_pct": 49.2,
+        "tie_rate_pct": 47.099999999999994,
+        "loss_rate_pct": 3.6999999999999997,
+        "t_stat": 19.503934302277347,
+        "p_ttest": 4.87295742421282e-72,
+        "wilcoxon_w": 137047.0,
+        "p_wilcoxon": 4.306501686745022e-81,
+        "cohens_d": 0.616768557294834,
+        "ci_95": [
+          12432.081198982227,
+          15188.723466491636
+        ]
+      },
+      "AgriLink_vs_S2_HighestPrice": {
+        "mean_gain_inr": 1554.6689823434008,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.988982970083865,
+        "pct_gain_mean_scenario": 2.123217998503771,
+        "wins": 214,
+        "ties": 757,
+        "losses": 29,
+        "win_rate_pct": 21.4,
+        "tie_rate_pct": 75.7,
+        "loss_rate_pct": 2.9000000000000004,
+        "t_stat": 7.162856757306528,
+        "p_ttest": 1.5315712244929506e-12,
+        "wilcoxon_w": 25776.0,
+        "p_wilcoxon": 8.807470358074186e-24,
+        "cohens_d": 0.22650941906616553,
+        "ci_95": [
+          1139.6823566519313,
+          1991.71032392552
+        ]
+      },
+      "AgriLink_vs_S3_DistanceCap": {
+        "mean_gain_inr": 13756.371264473912,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 9.48734499872239,
+        "pct_gain_mean_scenario": 17.46720631547488,
+        "wins": 492,
+        "ties": 471,
+        "losses": 37,
+        "win_rate_pct": 49.2,
+        "tie_rate_pct": 47.099999999999994,
+        "loss_rate_pct": 3.6999999999999997,
+        "t_stat": 19.503934302277347,
+        "p_ttest": 4.87295742421282e-72,
+        "wilcoxon_w": 137047.0,
+        "p_wilcoxon": 4.306501686745022e-81,
+        "cohens_d": 0.616768557294834,
+        "ci_95": [
+          12272.283095692497,
+          15151.618675373435
+        ]
+      },
+      "AgriLink_vs_S4_Hurdle": {
+        "mean_gain_inr": 610.4578697359419,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.3860164374674685,
+        "pct_gain_mean_scenario": 1.000093619634108,
+        "wins": 118,
+        "ties": 855,
+        "losses": 27,
+        "win_rate_pct": 11.799999999999999,
+        "tie_rate_pct": 85.5,
+        "loss_rate_pct": 2.7,
+        "t_stat": 3.9026104075306787,
+        "p_ttest": 0.00010153841641136953,
+        "wilcoxon_w": 8453.0,
+        "p_wilcoxon": 2.2141484926354932e-10,
+        "cohens_d": 0.12341137708074881,
+        "ci_95": [
+          312.06841908580503,
+          940.6183603528319
+        ]
+      },
+      "AgriLink_vs_S5_LongRunAvg": {
+        "mean_gain_inr": 643.9469863640023,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.4072791658871994,
+        "pct_gain_mean_scenario": 0.9834426679602131,
+        "wins": 56,
+        "ties": 917,
+        "losses": 27,
+        "win_rate_pct": 5.6000000000000005,
+        "tie_rate_pct": 91.7,
+        "loss_rate_pct": 2.7,
+        "t_stat": 2.7031755130955446,
+        "p_ttest": 0.0069846091234090765,
+        "wilcoxon_w": 2327.0,
+        "p_wilcoxon": 0.004007486489179445,
+        "cohens_d": 0.08548191536576237,
+        "ci_95": [
+          214.51850228388625,
+          1156.6846560407737
+        ]
+      },
+      "AgriLink_vs_S6_MovingAvg": {
+        "mean_gain_inr": 191.90925848814047,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.12103141844958323,
+        "pct_gain_mean_scenario": 0.40043379881194996,
+        "wins": 43,
+        "ties": 926,
+        "losses": 31,
+        "win_rate_pct": 4.3,
+        "tie_rate_pct": 92.60000000000001,
+        "loss_rate_pct": 3.1,
+        "t_stat": 1.550409701073295,
+        "p_ttest": 0.1213599317302772,
+        "wilcoxon_w": 1698.0,
+        "p_wilcoxon": 0.047189565159133015,
+        "cohens_d": 0.04902825961812416,
+        "ci_95": [
+          -42.300424490528535,
+          437.54539359605775
+        ]
+      },
+      "AgriLink_vs_S7_RobustWorstCase": {
+        "mean_gain_inr": 3408.9240457563546,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 2.194428447893087,
+        "pct_gain_mean_scenario": 2.596343942860111,
+        "wins": 166,
+        "ties": 809,
+        "losses": 25,
+        "win_rate_pct": 16.6,
+        "tie_rate_pct": 80.9,
+        "loss_rate_pct": 2.5,
+        "t_stat": 10.247583067003031,
+        "p_ttest": 1.6836172225029073e-23,
+        "wilcoxon_w": 17219.0,
+        "p_wilcoxon": 3.3416185454962114e-26,
+        "cohens_d": 0.3240570300350345,
+        "ci_95": [
+          2779.9011952647734,
+          4074.334396378234
+        ]
+      },
+      "AgriLink_vs_S8_Top3Portfolio": {
+        "mean_gain_inr": 4775.310882498869,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 3.101291851641211,
+        "pct_gain_mean_scenario": 6.856434522378755,
+        "wins": 200,
+        "ties": 792,
+        "losses": 8,
+        "win_rate_pct": 20.0,
+        "tie_rate_pct": 79.2,
+        "loss_rate_pct": 0.8,
+        "t_stat": 11.090107617069478,
+        "p_ttest": 4.9206292327175436e-27,
+        "wilcoxon_w": 21532.0,
+        "p_wilcoxon": 6.543558943854811e-35,
+        "cohens_d": 0.3506999956632199,
+        "ci_95": [
+          3950.19225518388,
+          5630.591136817716
+        ]
+      },
+      "AgriLink_vs_Oracle": {
+        "mean_gain_inr": -616.1758908681811,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": -0.3866332509301907,
+        "pct_gain_mean_scenario": -0.7179888249090176,
+        "wins": 0,
+        "ties": 904,
+        "losses": 96,
+        "win_rate_pct": 0.0,
+        "tie_rate_pct": 90.4,
+        "loss_rate_pct": 9.6,
+        "t_stat": -6.449151710332448,
+        "p_ttest": 1.7489527557432378e-10,
+        "wilcoxon_w": 0.0,
+        "p_wilcoxon": 1.0,
+        "cohens_d": -0.20394008380620995,
+        "ci_95": [
+          -809.8205725145298,
+          -433.5302600065211
+        ]
+      },
+      "AgriLink_vs_Oracle_Nearest": {
+        "mean_gain_inr": 13756.371264473912,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 9.48734499872239,
+        "pct_gain_mean_scenario": 17.46720631547488,
+        "wins": 492,
+        "ties": 471,
+        "losses": 37,
+        "win_rate_pct": 49.2,
+        "tie_rate_pct": 47.099999999999994,
+        "loss_rate_pct": 3.6999999999999997,
+        "t_stat": 19.503934302277347,
+        "p_ttest": 4.87295742421282e-72,
+        "wilcoxon_w": 137047.0,
+        "p_wilcoxon": 4.306501686745022e-81,
+        "cohens_d": 0.616768557294834,
+        "ci_95": [
+          12370.095473331292,
+          15105.957975869987
+        ]
+      }
+    }
+  },
+  "common_cohort_summary": {
+    "cohort_size": 624,
+    "strategies": {
+      "S1_Nearest": {
+        "mean_nr": 151751.4507116014,
+        "median_nr": 128744.38482102918,
+        "std_nr": 93948.40635665735,
+        "mean_rev": 152496.88054283676,
+        "mean_tc": 745.4298312353856,
+        "mean_dist": 24.10348891798487
+      },
+      "S2_HighestPrice": {
+        "mean_nr": 159948.92977397848,
+        "median_nr": 138634.18641272635,
+        "std_nr": 94289.94676887132,
+        "mean_rev": 165607.6868379884,
+        "mean_tc": 5658.757064009902,
+        "mean_dist": 183.62763455180928
+      },
+      "S3_DistanceCap": {
+        "mean_nr": 151751.4507116014,
+        "median_nr": 128744.38482102918,
+        "std_nr": 93948.40635665735,
+        "mean_rev": 152496.88054283676,
+        "mean_tc": 745.4298312353856,
+        "mean_dist": 24.10348891798487
+      },
+      "S4_Hurdle": {
+        "mean_nr": 161362.18192222892,
+        "median_nr": 140022.80989924166,
+        "std_nr": 94508.04862095158,
+        "mean_rev": 165235.99914720698,
+        "mean_tc": 3873.8172249780514,
+        "mean_dist": 124.42193189123566
+      },
+      "S5_LongRunAvg": {
+        "mean_nr": 161971.6021846763,
+        "median_nr": 139833.1172114794,
+        "std_nr": 94020.2295561694,
+        "mean_rev": 165010.33729268415,
+        "mean_tc": 3038.735108007848,
+        "mean_dist": 96.80993242772212
+      },
+      "S6_MovingAvg": {
+        "mean_nr": 161660.57583848937,
+        "median_nr": 140022.80989924166,
+        "std_nr": 94217.85535343146,
+        "mean_rev": 164512.9883705993,
+        "mean_tc": 2852.412532109964,
+        "mean_dist": 92.70268725362388
+      },
+      "S7_RobustWorstCase": {
+        "mean_nr": 158136.60184252323,
+        "median_nr": 136475.62188823533,
+        "std_nr": 92664.66920349322,
+        "mean_rev": 160686.3858560999,
+        "mean_tc": 2549.7840135766487,
+        "mean_dist": 81.60032798114412
+      },
+      "S8_Top3Portfolio": {
+        "mean_nr": 158556.21701382755,
+        "median_nr": 138634.18641272635,
+        "std_nr": 96498.0997720695,
+        "mean_rev": 160400.02357168295,
+        "mean_tc": 1843.8065578553978,
+        "mean_dist": 59.63393164149818
+      },
+      "AgriLink": {
+        "mean_nr": 162106.83258812793,
+        "median_nr": 140022.80989924166,
+        "std_nr": 94051.40834644836,
+        "mean_rev": 164816.23934167685,
+        "mean_tc": 2709.4067535489107,
+        "mean_dist": 86.88119472691929
+      },
+      "Oracle": {
+        "mean_nr": 162651.42254016155,
+        "median_nr": 140022.80989924166,
+        "std_nr": 93702.50351452878,
+        "mean_rev": 165710.63213586182,
+        "mean_tc": 3059.209595700291,
+        "mean_dist": 98.30355411930579
+      },
+      "Oracle_Nearest": {
+        "mean_nr": 151751.4507116014,
+        "median_nr": 128744.38482102918,
+        "std_nr": 93948.40635665735,
+        "mean_rev": 152496.88054283676,
+        "mean_tc": 745.4298312353856,
+        "mean_dist": 24.10348891798487
+      }
+    },
+    "comparisons": {
+      "AgriLink_vs_S1_Nearest": {
+        "mean_gain_inr": 10355.381876526522,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 6.823909641698632,
+        "pct_gain_mean_scenario": 13.47846746335361,
+        "wins": 246,
+        "ties": 353,
+        "losses": 25,
+        "win_rate_pct": 39.42307692307692,
+        "tie_rate_pct": 56.57051282051282,
+        "loss_rate_pct": 4.006410256410256,
+        "t_stat": 13.590499759234339,
+        "p_ttest": 4.976711148849904e-37,
+        "wilcoxon_w": 35650.0,
+        "p_wilcoxon": 7.162149876591226e-41,
+        "cohens_d": 0.5440554089336691,
+        "ci_95": [
+          8822.56045430926,
+          11881.206319013641
+        ]
+      },
+      "AgriLink_vs_S2_HighestPrice": {
+        "mean_gain_inr": 2157.9028141494314,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 1.3491198829518587,
+        "pct_gain_mean_scenario": 3.063506918559915,
+        "wins": 124,
+        "ties": 485,
+        "losses": 15,
+        "win_rate_pct": 19.871794871794872,
+        "tie_rate_pct": 77.72435897435898,
+        "loss_rate_pct": 2.403846153846154,
+        "t_stat": 6.813647483954401,
+        "p_ttest": 2.2482140674881227e-11,
+        "wilcoxon_w": 8822.0,
+        "p_wilcoxon": 4.4160972840689e-17,
+        "cohens_d": 0.2727641980710738,
+        "ci_95": [
+          1540.8191037317085,
+          2763.7718081572016
+        ]
+      },
+      "AgriLink_vs_S3_DistanceCap": {
+        "mean_gain_inr": 10355.381876526522,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 6.823909641698632,
+        "pct_gain_mean_scenario": 13.47846746335361,
+        "wins": 246,
+        "ties": 353,
+        "losses": 25,
+        "win_rate_pct": 39.42307692307692,
+        "tie_rate_pct": 56.57051282051282,
+        "loss_rate_pct": 4.006410256410256,
+        "t_stat": 13.590499759234339,
+        "p_ttest": 4.976711148849904e-37,
+        "wilcoxon_w": 35650.0,
+        "p_wilcoxon": 7.162149876591226e-41,
+        "cohens_d": 0.5440554089336691,
+        "ci_95": [
+          8914.874521705382,
+          11978.680842909242
+        ]
+      },
+      "AgriLink_vs_S4_Hurdle": {
+        "mean_gain_inr": 744.6506658990218,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.461477811608861,
+        "pct_gain_mean_scenario": 1.3787567192912367,
+        "wins": 46,
+        "ties": 563,
+        "losses": 15,
+        "win_rate_pct": 7.371794871794872,
+        "tie_rate_pct": 90.22435897435898,
+        "loss_rate_pct": 2.403846153846154,
+        "t_stat": 3.252298300205927,
+        "p_ttest": 0.0012065730088576796,
+        "wilcoxon_w": 1513.0,
+        "p_wilcoxon": 2.2886346266381546e-05,
+        "cohens_d": 0.13019613060884952,
+        "ci_95": [
+          340.31278565659585,
+          1253.217885506182
+        ]
+      },
+      "AgriLink_vs_S5_LongRunAvg": {
+        "mean_gain_inr": 135.2304034516111,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.08349019311264252,
+        "pct_gain_mean_scenario": 0.20197226925248374,
+        "wins": 22,
+        "ties": 585,
+        "losses": 17,
+        "win_rate_pct": 3.5256410256410255,
+        "tie_rate_pct": 93.75,
+        "loss_rate_pct": 2.7243589743589745,
+        "t_stat": 0.7111843066240919,
+        "p_ttest": 0.47723621087839657,
+        "wilcoxon_w": 392.0,
+        "p_wilcoxon": 0.4888669680129131,
+        "cohens_d": 0.028470157508716714,
+        "ci_95": [
+          -212.64816262534822,
+          530.5427883996642
+        ]
+      },
+      "AgriLink_vs_S6_MovingAvg": {
+        "mean_gain_inr": 446.2567496385861,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.27604550294587765,
+        "pct_gain_mean_scenario": 0.6376428833560575,
+        "wins": 26,
+        "ties": 582,
+        "losses": 16,
+        "win_rate_pct": 4.166666666666666,
+        "tie_rate_pct": 93.26923076923077,
+        "loss_rate_pct": 2.564102564102564,
+        "t_stat": 2.7085156827506855,
+        "p_ttest": 0.006944161338079873,
+        "wilcoxon_w": 644.0,
+        "p_wilcoxon": 0.008043070068088812,
+        "cohens_d": 0.1084274039577481,
+        "ci_95": [
+          149.0322340687711,
+          783.2376968038616
+        ]
+      },
+      "AgriLink_vs_S7_RobustWorstCase": {
+        "mean_gain_inr": 3970.230745604662,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 2.5106336542873,
+        "pct_gain_mean_scenario": 3.142536088163844,
+        "wins": 120,
+        "ties": 494,
+        "losses": 10,
+        "win_rate_pct": 19.230769230769234,
+        "tie_rate_pct": 79.16666666666666,
+        "loss_rate_pct": 1.6025641025641024,
+        "t_stat": 9.260982559267564,
+        "p_ttest": 3.2331524617428087e-19,
+        "wilcoxon_w": 8333.0,
+        "p_wilcoxon": 1.3966032577775372e-21,
+        "cohens_d": 0.3707360099091565,
+        "ci_95": [
+          3180.3603943563685,
+          4821.277928855839
+        ]
+      },
+      "AgriLink_vs_S8_Top3Portfolio": {
+        "mean_gain_inr": 3550.6155743003824,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 2.2393417559847117,
+        "pct_gain_mean_scenario": 6.57415174603316,
+        "wins": 82,
+        "ties": 541,
+        "losses": 1,
+        "win_rate_pct": 13.141025641025642,
+        "tie_rate_pct": 86.69871794871796,
+        "loss_rate_pct": 0.16025641025641024,
+        "t_stat": 7.229781367000109,
+        "p_ttest": 1.4225428253541635e-12,
+        "wilcoxon_w": 3466.0,
+        "p_wilcoxon": 2.586110880391001e-15,
+        "cohens_d": 0.28942288567803665,
+        "ci_95": [
+          2618.275780263428,
+          4543.088841514878
+        ]
+      },
+      "AgriLink_vs_Oracle": {
+        "mean_gain_inr": -544.5899520336017,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": -0.33482028225062416,
+        "pct_gain_mean_scenario": -0.7095767685463625,
+        "wins": 0,
+        "ties": 570,
+        "losses": 54,
+        "win_rate_pct": 0.0,
+        "tie_rate_pct": 91.34615384615384,
+        "loss_rate_pct": 8.653846153846153,
+        "t_stat": -5.184603861423573,
+        "p_ttest": 2.929933639708802e-07,
+        "wilcoxon_w": 0.0,
+        "p_wilcoxon": 0.9999999999187151,
+        "cohens_d": -0.20755026113512065,
+        "ci_95": [
+          -763.0206391955925,
+          -353.3582200320262
+        ]
+      },
+      "AgriLink_vs_Oracle_Nearest": {
+        "mean_gain_inr": 10355.381876526522,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 6.823909641698632,
+        "pct_gain_mean_scenario": 13.47846746335361,
+        "wins": 246,
+        "ties": 353,
+        "losses": 25,
+        "win_rate_pct": 39.42307692307692,
+        "tie_rate_pct": 56.57051282051282,
+        "loss_rate_pct": 4.006410256410256,
+        "t_stat": 13.590499759234339,
+        "p_ttest": 4.976711148849904e-37,
+        "wilcoxon_w": 35650.0,
+        "p_wilcoxon": 7.162149876591226e-41,
+        "cohens_d": 0.5440554089336691,
+        "ci_95": [
+          8891.772654519978,
+          11892.01279678292
+        ]
+      }
+    }
+  },
+  "independent_freight_models": {
+    "linear": {
+      "agrilink_mean_nr": 158753.4306770533,
+      "nearest_mean_nr": 144997.0594125794,
+      "highest_mean_nr": 157198.7616947099,
+      "gain_vs_nearest_inr": 13756.371264473912,
+      "gain_vs_nearest_pct": 9.48734499872239,
+      "gain_vs_highest_inr": 1554.6689823434008,
+      "gain_vs_highest_pct": 0.988982970083865,
+      "wilcoxon_p_vs_nearest": 4.306501686745022e-81,
+      "wilcoxon_p_vs_highest": 8.807470358074186e-24
+    },
+    "slab": {
+      "agrilink_mean_nr": 158986.5500301655,
+      "nearest_mean_nr": 144548.94885560323,
+      "highest_mean_nr": 158117.90382212863,
+      "gain_vs_nearest_inr": 14437.601174562316,
+      "gain_vs_nearest_pct": 9.988036086644026,
+      "gain_vs_highest_inr": 868.6462080368888,
+      "gain_vs_highest_pct": 0.5493661293499252,
+      "wilcoxon_p_vs_nearest": 1.8591004039512996e-83,
+      "wilcoxon_p_vs_highest": 1.2333726572002958e-11
+    },
+    "minimum_charge": {
+      "agrilink_mean_nr": 158359.81645724172,
+      "nearest_mean_nr": 144224.7885152929,
+      "highest_mean_nr": 156935.6790144427,
+      "gain_vs_nearest_inr": 14135.027941948812,
+      "gain_vs_nearest_pct": 9.800692438144926,
+      "gain_vs_highest_inr": 1424.1374427990206,
+      "gain_vs_highest_pct": 0.9074656902385854,
+      "wilcoxon_p_vs_nearest": 2.6128458819336508e-82,
+      "wilcoxon_p_vs_highest": 1.0897710656034196e-21
+    },
+    "stochastic": {
+      "agrilink_mean_nr": 155431.781214463,
+      "nearest_mean_nr": 144256.99680947876,
+      "highest_mean_nr": 151080.6919012696,
+      "gain_vs_nearest_inr": 11174.78440498422,
+      "gain_vs_nearest_pct": 7.746441872585811,
+      "gain_vs_highest_inr": 4351.089313193411,
+      "gain_vs_highest_pct": 2.879977089353557,
+      "wilcoxon_p_vs_nearest": 3.0702748014889485e-48,
+      "wilcoxon_p_vs_highest": 1.2842720520802068e-25
+    },
+    "backhaul_penalty": {
+      "agrilink_mean_nr": 157058.74542259093,
+      "nearest_mean_nr": 144997.0594125794,
+      "highest_mean_nr": 153727.52424644798,
+      "gain_vs_nearest_inr": 12061.686010011543,
+      "gain_vs_nearest_pct": 8.318572844771156,
+      "gain_vs_highest_inr": 3331.2211761429517,
+      "gain_vs_highest_pct": 2.1669646944957686,
+      "wilcoxon_p_vs_nearest": 2.4357369756261333e-65,
+      "wilcoxon_p_vs_highest": 1.9949076212475641e-35
+    }
+  },
+  "mandi_frictions_summary": {
+    "cohort_size": 1000,
+    "strategies": {
+      "S1_Nearest": {
+        "mean_nr": 137328.28077323738,
+        "median_nr": 110543.8975576791,
+        "std_nr": 86667.38497621674,
+        "mean_rev": 145743.910340873,
+        "mean_tc": 1194.9614852698212,
+        "mean_dist": 24.211163095490573
+      },
+      "S2_HighestPrice": {
+        "mean_nr": 149275.34872040013,
+        "median_nr": 123093.60389784112,
+        "std_nr": 89178.39412474315,
+        "mean_rev": 163351.28668690476,
+        "mean_tc": 5233.382864776142,
+        "mean_dist": 201.59817816676363
+      },
+      "AgriLink": {
+        "mean_nr": 150715.72489637064,
+        "median_nr": 123430.04539925713,
+        "std_nr": 88716.83355495262,
+        "mean_rev": 162114.4435968254,
+        "mean_tc": 3127.8935666598873,
+        "mean_dist": 109.27031529319378
+      },
+      "Oracle": {
+        "mean_nr": 151143.85797345534,
+        "median_nr": 123546.82991188538,
+        "std_nr": 88606.26444233884,
+        "mean_rev": 163600.16261706353,
+        "mean_tc": 3838.9713836410456,
+        "mean_dist": 139.05582150749055
+      }
+    },
+    "comparisons": {
+      "AgriLink_vs_S1_Nearest": {
+        "mean_gain_inr": 13387.444123133264,
+        "median_gain_inr": 134.512592769177,
+        "pct_gain_aggregate": 9.748497576576531,
+        "pct_gain_mean_scenario": 18.02882039409326,
+        "wins": 501,
+        "ties": 471,
+        "losses": 28,
+        "win_rate_pct": 50.1,
+        "tie_rate_pct": 47.099999999999994,
+        "loss_rate_pct": 2.8000000000000003,
+        "t_stat": 19.777452210943146,
+        "p_ttest": 1.0007828018761609e-73,
+        "wilcoxon_w": 137647.0,
+        "p_wilcoxon": 1.6356580187165563e-82,
+        "cohens_d": 0.6254179530171323,
+        "ci_95": [
+          12083.261196545318,
+          14683.42359463482
+        ]
+      },
+      "AgriLink_vs_S2_HighestPrice": {
+        "mean_gain_inr": 1440.3761759705249,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": 0.9649122834530449,
+        "pct_gain_mean_scenario": 2.4701027244512117,
+        "wins": 198,
+        "ties": 757,
+        "losses": 45,
+        "win_rate_pct": 19.8,
+        "tie_rate_pct": 75.7,
+        "loss_rate_pct": 4.5,
+        "t_stat": 6.869376317770377,
+        "p_ttest": 1.1324582954150125e-11,
+        "wilcoxon_w": 24998.0,
+        "p_wilcoxon": 8.768517571123289e-21,
+        "cohens_d": 0.21722875268974984,
+        "ci_95": [
+          1054.1548839684574,
+          1851.8344653226102
+        ]
+      },
+      "AgriLink_vs_Oracle": {
+        "mean_gain_inr": -428.13307708469074,
+        "median_gain_inr": 0.0,
+        "pct_gain_aggregate": -0.28326197493244415,
+        "pct_gain_mean_scenario": -0.48316852204683425,
+        "wins": 25,
+        "ties": 881,
+        "losses": 94,
+        "win_rate_pct": 2.5,
+        "tie_rate_pct": 88.1,
+        "loss_rate_pct": 9.4,
+        "t_stat": -4.7744792625924894,
+        "p_ttest": 2.070807455557578e-06,
+        "wilcoxon_w": 1284.0,
+        "p_wilcoxon": 0.9999999993279708,
+        "cohens_d": -0.1509822911103343,
+        "ci_95": [
+          -603.5063488784863,
+          -261.63476812319055
+        ]
+      }
+    }
+  },
+  "commodity_summary": [
+    {
+      "commodity": "Maize",
+      "sample_size": 200,
+      "agrilink_mean_nr": 76673.1117674449,
+      "nearest_mean_nr": 70861.47823947409,
+      "highest_mean_nr": 75038.96847539315,
+      "gain_vs_nearest_inr": 5811.633527970817,
+      "gain_vs_nearest_pct": 8.201400355113373,
+      "gain_vs_highest_inr": 1634.1432920517534,
+      "gain_vs_highest_pct": 2.177726220460539,
+      "win_rate_vs_nearest": 50.5,
+      "win_rate_vs_highest": 21.5
+    },
+    {
+      "commodity": "Groundnut",
+      "sample_size": 200,
+      "agrilink_mean_nr": 213136.33444230695,
+      "nearest_mean_nr": 194620.45273730133,
+      "highest_mean_nr": 212952.85326026566,
+      "gain_vs_nearest_inr": 18515.8817050056,
+      "gain_vs_nearest_pct": 9.513841656713419,
+      "gain_vs_highest_inr": 183.48118204127567,
+      "gain_vs_highest_pct": 0.08616047131194848,
+      "win_rate_vs_nearest": 55.00000000000001,
+      "win_rate_vs_highest": 27.0
+    },
+    {
+      "commodity": "Mango",
+      "sample_size": 200,
+      "agrilink_mean_nr": 83844.59558544785,
+      "nearest_mean_nr": 61796.37203510238,
+      "highest_mean_nr": 80916.71971983716,
+      "gain_vs_nearest_inr": 22048.22355034548,
+      "gain_vs_nearest_pct": 35.67883165992553,
+      "gain_vs_highest_inr": 2927.875865610696,
+      "gain_vs_highest_pct": 3.618381807552328,
+      "win_rate_vs_nearest": 55.50000000000001,
+      "win_rate_vs_highest": 21.5
+    },
+    {
+      "commodity": "Cotton",
+      "sample_size": 200,
+      "agrilink_mean_nr": 212477.56124702122,
+      "nearest_mean_nr": 206300.1296187421,
+      "highest_mean_nr": 209449.71667500795,
+      "gain_vs_nearest_inr": 6177.431628279125,
+      "gain_vs_nearest_pct": 2.9943905705224116,
+      "gain_vs_highest_inr": 3027.844572013281,
+      "gain_vs_highest_pct": 1.4456188435486974,
+      "win_rate_vs_nearest": 17.5,
+      "win_rate_vs_highest": 37.0
+    },
+    {
+      "commodity": "Arhar (Tur/Red Gram)(Whole)",
+      "sample_size": 200,
+      "agrilink_mean_nr": 207635.55034304553,
+      "nearest_mean_nr": 191406.864432277,
+      "highest_mean_nr": 207635.55034304553,
+      "gain_vs_nearest_inr": 16228.68591076854,
+      "gain_vs_nearest_pct": 8.478633176978091,
+      "gain_vs_highest_inr": 0.0,
+      "gain_vs_highest_pct": 0.0,
+      "win_rate_vs_nearest": 67.5,
+      "win_rate_vs_highest": 0.0
+    }
+  ],
+  "seed_stability": [
+    {
+      "seed": 42,
+      "agrilink_nr": 158753.4306770533,
+      "nearest_nr": 144997.0594125794,
+      "highest_nr": 157198.7616947099,
+      "gain_vs_nearest_inr": 13756.371264473912,
+      "gain_vs_nearest_pct": 9.48734499872239,
+      "gain_vs_highest_inr": 1554.6689823434008,
+      "gain_vs_highest_pct": 0.988982970083865
+    },
+    {
+      "seed": 101,
+      "agrilink_nr": 153071.10143176813,
+      "nearest_nr": 140341.3139791721,
+      "highest_nr": 151800.94101503532,
+      "gain_vs_nearest_inr": 12729.787452596063,
+      "gain_vs_nearest_pct": 9.070591611024286,
+      "gain_vs_highest_inr": 1270.1604167327946,
+      "gain_vs_highest_pct": 0.8367276304347807
+    },
+    {
+      "seed": 2024,
+      "agrilink_nr": 152922.77730162337,
+      "nearest_nr": 139215.47288152485,
+      "highest_nr": 151280.5114299197,
+      "gain_vs_nearest_inr": 13707.30442009848,
+      "gain_vs_nearest_pct": 9.846106999732498,
+      "gain_vs_highest_inr": 1642.2658717036802,
+      "gain_vs_highest_pct": 1.0855766259518884
+    },
+    {
+      "seed": 777,
+      "agrilink_nr": 150974.22928065254,
+      "nearest_nr": 137625.58587249284,
+      "highest_nr": 148995.88989987984,
+      "gain_vs_nearest_inr": 13348.643408159702,
+      "gain_vs_nearest_pct": 9.699245473532029,
+      "gain_vs_highest_inr": 1978.3393807727073,
+      "gain_vs_highest_pct": 1.3277811771197674
+    },
+    {
+      "seed": 999,
+      "agrilink_nr": 153621.18204073264,
+      "nearest_nr": 140847.36858368138,
+      "highest_nr": 152200.48632414712,
+      "gain_vs_nearest_inr": 12773.813457051272,
+      "gain_vs_nearest_pct": 9.06925957190459,
+      "gain_vs_highest_inr": 1420.6957165855476,
+      "gain_vs_highest_pct": 0.9334370414295643
+    }
+  ],
+  "overlap_highest_price": {
+    "identical_market_scenarios": 757,
+    "identical_market_pct": 75.7,
+    "divergent_scenarios": 243,
+    "divergent_pct": 24.299999999999997,
+    "divergent_mean_gain_agrilink_inr": 6397.814742153912,
+    "divergent_mean_distance_saved_km": 379.95005297765374,
+    "divergent_mean_freight_saved_inr": 11487.704001739781
+  },
+  "multi_horizon": [
+    {
+      "horizon_days": 7,
+      "cohort_size": 1000,
+      "agrilink_mean_nr": 158753.4306770533,
+      "nearest_mean_nr": 144997.0594125794,
+      "highest_mean_nr": 157198.7616947099,
+      "gain_vs_nearest_pct": 9.48734499872239,
+      "gain_vs_highest_pct": 0.988982970083865,
+      "wilcoxon_p_vs_nearest": 4.306501686745022e-81,
+      "wilcoxon_p_vs_highest": 8.807470358074186e-24
+    },
+    {
+      "horizon_days": 14,
+      "cohort_size": 1000,
+      "agrilink_mean_nr": 158317.29381230692,
+      "nearest_mean_nr": 144689.23483787075,
+      "highest_mean_nr": 156817.72605328183,
+      "gain_vs_nearest_pct": 9.418847912014236,
+      "gain_vs_highest_pct": 0.9562488863762623,
+      "wilcoxon_p_vs_nearest": 9.231401364173768e-84,
+      "wilcoxon_p_vs_highest": 1.1088436474530352e-22
+    },
+    {
+      "horizon_days": 30,
+      "cohort_size": 1000,
+      "agrilink_mean_nr": 157608.89322372864,
+      "nearest_mean_nr": 144086.2655494003,
+      "highest_mean_nr": 156161.6442592791,
+      "gain_vs_nearest_pct": 9.38509137062205,
+      "gain_vs_highest_pct": 0.9267634003946786,
+      "wilcoxon_p_vs_nearest": 1.9751952351843674e-83,
+      "wilcoxon_p_vs_highest": 8.286723309126051e-20
+    }
+  ],
+  "ablations": {
+    "lookback": [
+      {
+        "lookback_days": 7,
+        "agrilink_nr": 151894.2974048784,
+        "gain_vs_nearest_pct": 8.6243903947144,
+        "gain_vs_highest_pct": 1.076189833738059
+      },
+      {
+        "lookback_days": 14,
+        "agrilink_nr": 155176.8599533965,
+        "gain_vs_nearest_pct": 8.856191484583482,
+        "gain_vs_highest_pct": 1.0821756129759985
+      },
+      {
+        "lookback_days": 30,
+        "agrilink_nr": 158753.4306770533,
+        "gain_vs_nearest_pct": 9.48734499872239,
+        "gain_vs_highest_pct": 0.988982970083865
+      },
+      {
+        "lookback_days": 60,
+        "agrilink_nr": 158395.1624653711,
+        "gain_vs_nearest_pct": 9.240258462530816,
+        "gain_vs_highest_pct": 1.4296574492658116
+      },
+      {
+        "lookback_days": 90,
+        "agrilink_nr": 157823.7924770842,
+        "gain_vs_nearest_pct": 8.846202203319999,
+        "gain_vs_highest_pct": 1.4166976036699301
+      }
+    ],
+    "metric": [
+      {
+        "metric": "mean",
+        "agrilink_nr": 158753.4306770533,
+        "gain_vs_nearest_pct": 9.48734499872239,
+        "gain_vs_highest_pct": 0.988982970083865
+      },
+      {
+        "metric": "median",
+        "agrilink_nr": 158459.81494135672,
+        "gain_vs_nearest_pct": 9.284847281261026,
+        "gain_vs_highest_pct": 0.8456447271789775
+      },
+      {
+        "metric": "trimmed",
+        "agrilink_nr": 158747.96262327084,
+        "gain_vs_nearest_pct": 9.483573850669734,
+        "gain_vs_highest_pct": 1.0193689317041925
+      },
+      {
+        "metric": "latest",
+        "agrilink_nr": 158358.13479335635,
+        "gain_vs_nearest_pct": 9.21472161911843,
+        "gain_vs_highest_pct": 0.8366315374693422
+      }
+    ],
+    "circuity": [
+      {
+        "circuity_factor": 1.0,
+        "agrilink_nr": 159624.360094471,
+        "gain_vs_nearest_pct": 9.964097472781784,
+        "gain_vs_highest_pct": 0.6810281630504592
+      },
+      {
+        "circuity_factor": 1.15,
+        "agrilink_nr": 159195.2448867969,
+        "gain_vs_nearest_pct": 9.734645348113883,
+        "gain_vs_highest_pct": 0.8690824017738245
+      },
+      {
+        "circuity_factor": 1.25,
+        "agrilink_nr": 158860.68752435542,
+        "gain_vs_nearest_pct": 9.548091886004212,
+        "gain_vs_highest_pct": 0.9645973424420178
+      },
+      {
+        "circuity_factor": 1.28,
+        "agrilink_nr": 158753.4306770533,
+        "gain_vs_nearest_pct": 9.48734499872239,
+        "gain_vs_highest_pct": 0.988982970083865
+      },
+      {
+        "circuity_factor": 1.4,
+        "agrilink_nr": 158408.39806673434,
+        "gain_vs_nearest_pct": 9.30216730418103,
+        "gain_vs_highest_pct": 1.1406035027230357
+      }
+    ]
+  },
+  "switching_and_breakeven": {
+    "total_scenarios": 1000,
+    "switched_count": 529,
+    "switch_rate_pct": 52.900000000000006,
+    "mean_gain_when_switched_inr": 26004.482541538586,
+    "median_gain_when_switched_inr": 20207.654437562887,
+    "c_star_median_positive": 0.07195199795768029,
+    "c_star_negative_count": 19,
+    "c_star_negative_pct": 3.5916824196597354,
+    "pct_survive_100pct_freight_hike": 77.12665406427222,
+    "pct_survive_200pct_freight_hike": 68.24196597353497,
+    "pct_survive_300pct_freight_hike": 63.32703213610586
+  },
+  "primary_freight_survey_quotes": [
+    {
+      "quote_id": "FQ01",
+      "hub": "Kurnool",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 25,
+      "rate_inr": 800,
+      "effective_inr_per_tonne_km": 21.33,
+      "type": "Short haul village-to-mandi"
+    },
+    {
+      "quote_id": "FQ02",
+      "hub": "Kurnool",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 45,
+      "rate_inr": 1200,
+      "effective_inr_per_tonne_km": 17.78,
+      "type": "Taluk transit"
+    },
+    {
+      "quote_id": "FQ03",
+      "hub": "Kurnool",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 50,
+      "rate_inr": 1600,
+      "effective_inr_per_tonne_km": 12.8,
+      "type": "Sub-district haul"
+    },
+    {
+      "quote_id": "FQ04",
+      "hub": "Kurnool",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 85,
+      "rate_inr": 2300,
+      "effective_inr_per_tonne_km": 10.82,
+      "type": "Inter-taluk transfer"
+    },
+    {
+      "quote_id": "FQ05",
+      "hub": "Kurnool",
+      "vehicle": "Eicher 14ft (4.0T)",
+      "capacity_kg": 4000,
+      "distance_km": 120,
+      "rate_inr": 4400,
+      "effective_inr_per_tonne_km": 9.17,
+      "type": "Inter-district highway"
+    },
+    {
+      "quote_id": "FQ06",
+      "hub": "Kurnool",
+      "vehicle": "Eicher 14ft (4.0T)",
+      "capacity_kg": 4000,
+      "distance_km": 160,
+      "rate_inr": 5600,
+      "effective_inr_per_tonne_km": 8.75,
+      "type": "Inter-district highway"
+    },
+    {
+      "quote_id": "FQ07",
+      "hub": "Kurnool",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 30,
+      "rate_inr": 900,
+      "effective_inr_per_tonne_km": 20.0,
+      "type": "Short haul"
+    },
+    {
+      "quote_id": "FQ08",
+      "hub": "Kurnool",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 70,
+      "rate_inr": 2000,
+      "effective_inr_per_tonne_km": 11.43,
+      "type": "Intermediate transit"
+    },
+    {
+      "quote_id": "FQ09",
+      "hub": "Kadapa",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 20,
+      "rate_inr": 750,
+      "effective_inr_per_tonne_km": 25.0,
+      "type": "Local farm-to-yard"
+    },
+    {
+      "quote_id": "FQ10",
+      "hub": "Kadapa",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 40,
+      "rate_inr": 1100,
+      "effective_inr_per_tonne_km": 18.33,
+      "type": "Taluk route"
+    },
+    {
+      "quote_id": "FQ11",
+      "hub": "Kadapa",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 60,
+      "rate_inr": 1800,
+      "effective_inr_per_tonne_km": 12.0,
+      "type": "Sub-district haul"
+    },
+    {
+      "quote_id": "FQ12",
+      "hub": "Kadapa",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 95,
+      "rate_inr": 2500,
+      "effective_inr_per_tonne_km": 10.53,
+      "type": "Inter-district transfer"
+    },
+    {
+      "quote_id": "FQ13",
+      "hub": "Kadapa",
+      "vehicle": "Eicher 14ft (4.0T)",
+      "capacity_kg": 4000,
+      "distance_km": 130,
+      "rate_inr": 4800,
+      "effective_inr_per_tonne_km": 9.23,
+      "type": "Inter-district highway"
+    },
+    {
+      "quote_id": "FQ14",
+      "hub": "Kadapa",
+      "vehicle": "Eicher 17ft (5.0T)",
+      "capacity_kg": 5000,
+      "distance_km": 175,
+      "rate_inr": 6800,
+      "effective_inr_per_tonne_km": 7.77,
+      "type": "Long-distance bulk haul"
+    },
+    {
+      "quote_id": "FQ15",
+      "hub": "Kadapa",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 35,
+      "rate_inr": 1050,
+      "effective_inr_per_tonne_km": 20.0,
+      "type": "Short haul"
+    },
+    {
+      "quote_id": "FQ16",
+      "hub": "Kadapa",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 75,
+      "rate_inr": 2100,
+      "effective_inr_per_tonne_km": 11.2,
+      "type": "Intermediate transit"
+    },
+    {
+      "quote_id": "FQ17",
+      "hub": "Guntur",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 22,
+      "rate_inr": 800,
+      "effective_inr_per_tonne_km": 24.24,
+      "type": "Local cotton farm haul"
+    },
+    {
+      "quote_id": "FQ18",
+      "hub": "Guntur",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 42,
+      "rate_inr": 1200,
+      "effective_inr_per_tonne_km": 19.05,
+      "type": "Taluk cotton transit"
+    },
+    {
+      "quote_id": "FQ19",
+      "hub": "Guntur",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 55,
+      "rate_inr": 1750,
+      "effective_inr_per_tonne_km": 12.73,
+      "type": "Sub-district haul"
+    },
+    {
+      "quote_id": "FQ20",
+      "hub": "Guntur",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 90,
+      "rate_inr": 2400,
+      "effective_inr_per_tonne_km": 10.67,
+      "type": "Inter-district transfer"
+    },
+    {
+      "quote_id": "FQ21",
+      "hub": "Guntur",
+      "vehicle": "Eicher 14ft (4.0T)",
+      "capacity_kg": 4000,
+      "distance_km": 115,
+      "rate_inr": 4300,
+      "effective_inr_per_tonne_km": 9.35,
+      "type": "Inter-district highway"
+    },
+    {
+      "quote_id": "FQ22",
+      "hub": "Guntur",
+      "vehicle": "Eicher 17ft (5.0T)",
+      "capacity_kg": 5000,
+      "distance_km": 150,
+      "rate_inr": 5800,
+      "effective_inr_per_tonne_km": 7.73,
+      "type": "Long-distance bulk haul"
+    },
+    {
+      "quote_id": "FQ23",
+      "hub": "Guntur",
+      "vehicle": "Tata Ace (1.5T)",
+      "capacity_kg": 1500,
+      "distance_km": 28,
+      "rate_inr": 950,
+      "effective_inr_per_tonne_km": 22.62,
+      "type": "Short haul"
+    },
+    {
+      "quote_id": "FQ24",
+      "hub": "Guntur",
+      "vehicle": "Mahindra Bolero (2.5T)",
+      "capacity_kg": 2500,
+      "distance_km": 80,
+      "rate_inr": 2200,
+      "effective_inr_per_tonne_km": 11.0,
+      "type": "Intermediate transit"
+    },
+    {
+      "quote_id": "FQ25",
+      "hub": "Guntur",
+      "vehicle": "Eicher 14ft (4.0T)",
+      "capacity_kg": 4000,
+      "distance_km": 140,
+      "rate_inr": 5100,
+      "effective_inr_per_tonne_km": 9.11,
+      "type": "Inter-district highway"
+    }
+  ],
+  "farmer_dispatch_case_studies": [
+    {
+      "record_id": "FD_01",
+      "crop": "Cotton",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 74.68,
+      "actual_net_inr": 223284.44,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 16504.62,
+      "agrilink_pct_gain": 7.39,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_02",
+      "crop": "Cotton",
+      "quantity_kg": 2000,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 72.0,
+      "actual_net_inr": 143254.5,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 6894.15,
+      "agrilink_pct_gain": 4.81,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_03",
+      "crop": "Maize",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 1058.34,
+      "actual_price_received_inr_kg": 23.33,
+      "actual_net_inr": 68930.98,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 3242.26,
+      "agrilink_pct_gain": 4.7,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_04",
+      "crop": "Groundnut",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 804.59,
+      "actual_price_received_inr_kg": 55.67,
+      "actual_net_inr": 166205.17,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 7164.95,
+      "agrilink_pct_gain": 4.31,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_05",
+      "crop": "Groundnut",
+      "quantity_kg": 2000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 52.84,
+      "actual_net_inr": 104923.93,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 7579.3,
+      "agrilink_pct_gain": 7.22,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_06",
+      "crop": "Cotton",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 73.71,
+      "actual_net_inr": 294091.26,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 17962.53,
+      "agrilink_pct_gain": 6.11,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_07",
+      "crop": "Mango",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 18.86,
+      "actual_net_inr": 21882.43,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 5182.4,
+      "agrilink_pct_gain": 23.68,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_08",
+      "crop": "Groundnut",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 865.32,
+      "actual_price_received_inr_kg": 55.38,
+      "actual_net_inr": 137584.0,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 10471.69,
+      "agrilink_pct_gain": 7.61,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_09",
+      "crop": "Groundnut",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 54.64,
+      "actual_net_inr": 81211.37,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 4273.76,
+      "agrilink_pct_gain": 5.26,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_10",
+      "crop": "Cotton",
+      "quantity_kg": 2000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 71.55,
+      "actual_net_inr": 142355.36,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 11912.7,
+      "agrilink_pct_gain": 8.37,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_11",
+      "crop": "Groundnut",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 55.41,
+      "actual_net_inr": 220874.81,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 9559.25,
+      "agrilink_pct_gain": 4.33,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_12",
+      "crop": "Maize",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 863.7,
+      "actual_price_received_inr_kg": 23.58,
+      "actual_net_inr": 58084.57,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 3964.82,
+      "agrilink_pct_gain": 6.83,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_13",
+      "crop": "Mango",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 14.36,
+      "actual_net_inr": 56697.27,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 22817.28,
+      "agrilink_pct_gain": 40.24,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_14",
+      "crop": "Cotton",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 73.52,
+      "actual_net_inr": 109530.76,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 10715.47,
+      "agrilink_pct_gain": 9.78,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_15",
+      "crop": "Maize",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 23.21,
+      "actual_net_inr": 68876.36,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 2997.3,
+      "agrilink_pct_gain": 4.35,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_16",
+      "crop": "Mango",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 14.04,
+      "actual_net_inr": 16103.01,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 10599.88,
+      "agrilink_pct_gain": 65.83,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_17",
+      "crop": "Maize",
+      "quantity_kg": 2000,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 22.42,
+      "actual_net_inr": 44097.68,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 4597.06,
+      "agrilink_pct_gain": 10.42,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_18",
+      "crop": "Maize",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 817.86,
+      "actual_price_received_inr_kg": 22.49,
+      "actual_net_inr": 55415.12,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 3277.59,
+      "agrilink_pct_gain": 5.91,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_19",
+      "crop": "Groundnut",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 792.18,
+      "actual_price_received_inr_kg": 56.38,
+      "actual_net_inr": 224718.37,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 20827.28,
+      "agrilink_pct_gain": 9.27,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_20",
+      "crop": "Mango",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 21.77,
+      "actual_net_inr": 25378.44,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 10880.88,
+      "agrilink_pct_gain": 42.87,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_21",
+      "crop": "Maize",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 954.04,
+      "actual_price_received_inr_kg": 22.09,
+      "actual_net_inr": 87409.68,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 5218.74,
+      "agrilink_pct_gain": 5.97,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_22",
+      "crop": "Groundnut",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 57.37,
+      "actual_net_inr": 171373.74,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 13090.99,
+      "agrilink_pct_gain": 7.64,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_23",
+      "crop": "Cotton",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 844.54,
+      "actual_price_received_inr_kg": 71.5,
+      "actual_net_inr": 177894.84,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 11997.02,
+      "agrilink_pct_gain": 6.74,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_24",
+      "crop": "Maize",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 865.71,
+      "actual_price_received_inr_kg": 22.4,
+      "actual_net_inr": 55122.94,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 4917.28,
+      "agrilink_pct_gain": 8.92,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_25",
+      "crop": "Mango",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 19.07,
+      "actual_net_inr": 27850.85,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 14100.34,
+      "agrilink_pct_gain": 50.63,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_26",
+      "crop": "Maize",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 23.53,
+      "actual_net_inr": 58082.8,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 2933.46,
+      "agrilink_pct_gain": 5.05,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_27",
+      "crop": "Groundnut",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 52.66,
+      "actual_net_inr": 62442.37,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 3780.85,
+      "agrilink_pct_gain": 6.05,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_28",
+      "crop": "Cotton",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 71.83,
+      "actual_net_inr": 178821.72,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 9382.25,
+      "agrilink_pct_gain": 5.25,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_29",
+      "crop": "Cotton",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 70.72,
+      "actual_net_inr": 282126.77,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 17458.71,
+      "agrilink_pct_gain": 6.19,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_30",
+      "crop": "Mango",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 18.46,
+      "actual_net_inr": 73109.26,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 25703.4,
+      "agrilink_pct_gain": 35.16,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_31",
+      "crop": "Groundnut",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 53.51,
+      "actual_net_inr": 79516.04,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 6806.43,
+      "agrilink_pct_gain": 8.56,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_32",
+      "crop": "Groundnut",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 53.6,
+      "actual_net_inr": 63570.82,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 7823.72,
+      "agrilink_pct_gain": 12.31,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_33",
+      "crop": "Cotton",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 73.81,
+      "actual_net_inr": 220668.32,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 18079.33,
+      "agrilink_pct_gain": 8.19,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_34",
+      "crop": "Cotton",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 71.45,
+      "actual_net_inr": 106428.5,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 8736.91,
+      "agrilink_pct_gain": 8.21,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_35",
+      "crop": "Maize",
+      "quantity_kg": 2000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 23.21,
+      "actual_net_inr": 45675.12,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 3231.2,
+      "agrilink_pct_gain": 7.07,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_36",
+      "crop": "Mango",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 994.34,
+      "actual_price_received_inr_kg": 14.72,
+      "actual_net_inr": 57894.93,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 36397.63,
+      "agrilink_pct_gain": 62.87,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_37",
+      "crop": "Groundnut",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 1147.98,
+      "actual_price_received_inr_kg": 57.15,
+      "actual_net_inr": 227452.63,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 14565.39,
+      "agrilink_pct_gain": 6.4,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_38",
+      "crop": "Groundnut",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 53.36,
+      "actual_net_inr": 79288.46,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 7804.92,
+      "agrilink_pct_gain": 9.84,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_39",
+      "crop": "Groundnut",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 55.11,
+      "actual_net_inr": 65377.81,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 7073.63,
+      "agrilink_pct_gain": 10.82,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_40",
+      "crop": "Maize",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 23.7,
+      "actual_net_inr": 27688.53,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 2495.61,
+      "agrilink_pct_gain": 9.01,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_41",
+      "crop": "Groundnut",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 57.89,
+      "actual_net_inr": 143982.53,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 11730.17,
+      "agrilink_pct_gain": 8.15,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_42",
+      "crop": "Groundnut",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 57.38,
+      "actual_net_inr": 68109.95,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 7412.26,
+      "agrilink_pct_gain": 10.88,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_43",
+      "crop": "Maize",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 22.8,
+      "actual_net_inr": 26611.72,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 2421.99,
+      "agrilink_pct_gain": 9.1,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_44",
+      "crop": "Mango",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 1228.68,
+      "actual_price_received_inr_kg": 19.14,
+      "actual_net_inr": 75316.33,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 15823.57,
+      "agrilink_pct_gain": 21.01,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_45",
+      "crop": "Groundnut",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 1122.23,
+      "actual_price_received_inr_kg": 55.48,
+      "actual_net_inr": 220814.25,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 17152.35,
+      "agrilink_pct_gain": 7.77,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_46",
+      "crop": "Mango",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 15.29,
+      "actual_net_inr": 17593.76,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 8359.36,
+      "agrilink_pct_gain": 47.51,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_47",
+      "crop": "Maize",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 22.85,
+      "actual_net_inr": 67796.15,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 2685.08,
+      "agrilink_pct_gain": 3.96,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_48",
+      "crop": "Groundnut",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 56.47,
+      "actual_net_inr": 140412.56,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 14384.33,
+      "agrilink_pct_gain": 10.24,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_49",
+      "crop": "Groundnut",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 55.82,
+      "actual_net_inr": 138794.99,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 8836.32,
+      "agrilink_pct_gain": 6.37,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_50",
+      "crop": "Cotton",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 857.37,
+      "actual_price_received_inr_kg": 75.35,
+      "actual_net_inr": 300551.74,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 23741.13,
+      "agrilink_pct_gain": 7.9,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_51",
+      "crop": "Maize",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 1099.3,
+      "actual_price_received_inr_kg": 22.68,
+      "actual_net_inr": 89603.49,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 8750.49,
+      "agrilink_pct_gain": 9.77,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_52",
+      "crop": "Groundnut",
+      "quantity_kg": 2000,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 56.61,
+      "actual_net_inr": 112472.65,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 4961.09,
+      "agrilink_pct_gain": 4.41,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_53",
+      "crop": "Mango",
+      "quantity_kg": 4000,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 1395.77,
+      "actual_price_received_inr_kg": 21.32,
+      "actual_net_inr": 83879.89,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 24184.65,
+      "agrilink_pct_gain": 28.83,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_54",
+      "crop": "Groundnut",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 57.8,
+      "actual_net_inr": 172649.79,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 20123.79,
+      "agrilink_pct_gain": 11.66,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_55",
+      "crop": "Mango",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 20.81,
+      "actual_net_inr": 61677.28,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 17552.03,
+      "agrilink_pct_gain": 28.46,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_56",
+      "crop": "Groundnut",
+      "quantity_kg": 1200,
+      "actual_mandi_chosen": "Kurnool",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 57.07,
+      "actual_net_inr": 67728.33,
+      "agrilink_recommended_mandi": "Nandyal",
+      "agrilink_expected_gain_inr": 7572.09,
+      "agrilink_pct_gain": 11.18,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_57",
+      "crop": "Groundnut",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Cuddapah",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 57.94,
+      "actual_net_inr": 86160.48,
+      "agrilink_recommended_mandi": "Tenakallu",
+      "agrilink_expected_gain_inr": 4395.57,
+      "agrilink_pct_gain": 5.1,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_58",
+      "crop": "Cotton",
+      "quantity_kg": 1500,
+      "actual_mandi_chosen": "Tiruvuru",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 75.09,
+      "actual_net_inr": 111888.03,
+      "agrilink_recommended_mandi": "Mylavaram",
+      "agrilink_expected_gain_inr": 5122.19,
+      "agrilink_pct_gain": 4.58,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_59",
+      "crop": "Maize",
+      "quantity_kg": 3000,
+      "actual_mandi_chosen": "Chittoor",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 21.68,
+      "actual_net_inr": 64287.37,
+      "agrilink_recommended_mandi": "Puttur",
+      "agrilink_expected_gain_inr": 3321.68,
+      "agrilink_pct_gain": 5.17,
+      "switch_recommended": true
+    },
+    {
+      "record_id": "FD_60",
+      "crop": "Maize",
+      "quantity_kg": 2500,
+      "actual_mandi_chosen": "Adoni",
+      "actual_freight_paid_inr": 750.0,
+      "actual_price_received_inr_kg": 22.01,
+      "actual_net_inr": 54265.16,
+      "agrilink_recommended_mandi": "Yemmiganur",
+      "agrilink_expected_gain_inr": 5941.48,
+      "agrilink_pct_gain": 10.95,
+      "switch_recommended": true
+    }
+  ]
+}

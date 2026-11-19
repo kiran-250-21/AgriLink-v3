@@ -10,6 +10,45 @@ It compares live regional APMC market price listings against buyer procurement o
 
 ---
 
+---
+
+## 📂 Repository Organization
+
+The repository is organized into two primary pillars:
+
+```
+AgriLink/
+├── fullstack/                          # Complete Web Platform Codebase
+│   ├── backend/                        # Node.js & Express REST API Server
+│   │   ├── config/                     # MongoDB connection
+│   │   ├── controllers/                # Auth, Harvest, Market, Order, Transporter
+│   │   ├── middleware/                 # JWT Auth, Role validation
+│   │   ├── models/                     # Mongoose schemas
+│   │   ├── routes/                     # REST API route handlers
+│   │   ├── services/                   # Spatial optimization engine
+│   │   ├── utils/                      # Haversine & circuity (Cf=1.28) utilities
+│   │   └── server.js                   # Backend entry point
+│   ├── frontend/                       # React 19 + Vite + TailwindCSS SPA
+│   │   ├── src/                        # Pages (Farmer, Buyer, Driver, FPO, Admin)
+│   │   ├── public/                     # Icons and static web assets
+│   │   └── vite.config.js              # Vite server & API proxy config
+│   └── README.md                       # Fullstack quickstart & architecture guide
+│
+├── research_and_docs/                  # Academic Research & Project Documentation
+│   ├── docs/                           # Final Capstone Report (DOCX/PDF) & 12-Page Research Paper
+│   ├── presentations/                  # Review 1 & Review 2 PPTX / HTML slide decks
+│   ├── documentation/                  # Comprehensive project documentation & viva packet
+│   ├── linkedin_post/                  # Technical showcase slides, post copy, banners
+│   ├── data/                           # Real AGMARKNET auction prices & APMC coordinates
+│   ├── results/                        # 5,000-dispatch simulation data & publication figures
+│   ├── deliverables/                   # IEEE publication readiness checklist & BibTeX
+│   └── scripts/                        # Empirical analysis & simulation pipeline scripts
+│
+├── .gitignore                          # Standard git exclusion rules
+├── render.yaml                         # 1-Click Render Cloud deployment blueprint
+└── README.md                           # Master project guide
+```
+
 ## 🌟 Key Product Features & Architectural Engines
 
 1. **Market Intelligence & Net Return Recommendation Engine**:
@@ -48,7 +87,7 @@ git clone https://github.com/YOUR_USERNAME/AgriLink.git
 cd AgriLink
 
 # Install Backend
-cd backend
+cd fullstack/backend
 npm install
 
 # Install Frontend
@@ -57,7 +96,7 @@ npm install
 ```
 
 ### 2. Environment Variables (`backend/.env`)
-Create a `.env` file inside `backend/`:
+Create a `.env` file inside `fullstack/backend/`:
 ```env
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/agrilink
@@ -70,7 +109,7 @@ ADMIN_PASSWORD=adminPass123!
 ### 3. Run Locally
 ```bash
 # Start Backend (Port 5000)
-cd backend
+cd fullstack/backend
 npm start
 
 # Start Frontend (Port 3000)
