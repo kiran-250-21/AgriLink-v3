@@ -13,9 +13,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: MONGO_URI
-        sync: false
+        value: mongodb+srv://pasupulakiran250_db_user:Mongodb212121@cluster0.j8cfijk.mongodb.net/agrilink?appName=Cluster0
       - key: JWT_SECRET
-        generateValue: true
+        value: agrilink_super_secret_jwt_key_2026_sde_startup
       - key: ADMIN_EMAIL
         value: admin@agrilink.com
       - key: ADMIN_PASSWORD
